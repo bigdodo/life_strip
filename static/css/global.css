@@ -1,0 +1,299 @@
+/*
+ * 2013-11-25 v1.0 css reset、layout、grid
+ * 2013-12-20 v1.1 增加gray、lightgray，重写网页默认字体
+ * 2014-03-01 v1.2 修改clearfix，增加trans、ell、loading、@fontface
+ */
+
+/*reset*/
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, form, button, input, select { margin:0; }
+ul, ol { padding-left: 0; list-style:none; }
+body { font:12px/1.5 Tahoma,Arial,"Lantinghei SC","Microsoft YaHei","微软雅黑",\5b8b\4f53,sans-serif; color:#333; background:#f2f2f2; }
+img { border:0; }
+button, input, textarea, select { font-size:100%; font-family:Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', \5b8b\4f53, sans-serif; outline:none; }
+table { border-collapse:collapse; border-spacing:0; }
+caption, th, em, i { font-style:normal; font-weight:normal; }
+caption, th { text-align:left; }
+a { text-decoration:none; color:#333; }
+a:hover { text-decoration:none; color: #0FC4BF;}
+/*layout*/
+.clearfix { *zoom:1;}
+.clearfix:after { display:table; content:''; clear:both; }
+#footer{position: relative;}
+#header, #content, #footer, .layout { *zoom:1;}
+#header:after, #content:after, #footer:after, .layout:after { display:table; content:''; clear:both; }
+#header, #content, #footer, .layout { margin-left:auto; margin-right:auto; }
+.col-sub, .col-extra { float:left; }
+.col-main { float:left; min-height:1px; width:100%; } /*bug fix: 主栏没有内容时，在 Firefox 和 Chrome 等浏览器下，布局不对*/
+#content { position:relative; padding-bottom:80px; }
+.no-scroll { overflow: hidden; }
+/*width*/
+.w980 { width:980px; margin-left:auto; margin-right:auto; }
+.w1000 { width:1000px; margin-left:auto; margin-right:auto; }
+.w1180{ width:1180px; margin-left:auto; margin-right:auto; }
+.fl { float:left; }
+.fr { float:right; }
+/*font*/
+.fs{ font-family: \5b8b\4f53}
+.f-a{ font-family: Arial}
+.f-yh{font-family: "Lantinghei SC","Microsoft YaHei";}
+.fs12{ font-size:12px; }
+.fs14 { font-size:14px; }
+.fs16 { font-size:16px; }
+.fs18 { font-size:18px; }
+.fs20 { font-size:20px; }
+.fs22 { font-size:22px; }
+.fs24 { font-size:24px; }
+.fs30 { font-size:30px; }
+/*text*/
+.b{font-weight: 700;}
+.n{font-weight: 400;}
+.tc { text-align: center; }
+.tr { text-align: right; }
+.tl { text-align: left; }
+.tdl { text-decoration: underline; }
+.nowrap { white-space: nowrap; }
+.bk { word-wrap: break-word; }
+.ell{display: block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}/*单行文字溢出虚点显示*/
+/*line-height*/
+.lh14 { line-height: 14px; }
+.lh16 { line-height: 16px; }
+.lh18 { line-height: 18px; }
+.lh20 { line-height: 20px; }
+.lh22 { line-height: 22px; }
+.lh24 { line-height: 24px; }
+.lh30 { line-height: 30px; }
+.lh50 { line-height: 50px; }
+/*color*/
+.white {color: #fff;}
+.white:hover {color: #fff; text-decoration: underline; }
+.red, .error{color: #f00;}
+.green{color: #10bb00;}
+.yellow, .warn{color: #FFD544;}
+.g0{color: #000;}
+.g3{color: #333;}
+.g6{color: #666;}
+.g7{color: #777;}
+.g9, .lightgray { color:#999; }
+.ga{color: #aaa;}
+.gb{color: #bbb;}
+.gc{color: #ccc;}
+.gd{color: #ddd;}
+.blue { color:#37b5f9; }
+.blue:hover { color:#37b5f9; text-decoration: underline; }
+.lightblue{color:#35b5f9;}
+.lightblue:hover{color:#35b5f9; text-decoration: underline;}
+.orange { color:#f40; }
+.orange:hover { color:#f40; }
+.rose{color: #F26D7E;}
+.rose:hover { color:#F26D7E; }
+.opacity:hover{opacity: .9; filter:alpha(opacity=90);}
+/*backgrounds */
+.bg-white { background-color: #fff; }
+.bg-blue{background-color: #37B5F9;}
+.bg-rose{background-color: #F26D7E;}
+/*border*/
+.bdd{border: 1px solid #ddd;}
+.bde{border: 1px solid #eee;}
+.br3, .avatar-img {border-radius: 3px;}
+.br5 {border-radius: 5px;}
+.br50 {border-radius: 50%;}
+/*margin*/
+.ml3{margin-left: 3px;}
+.ml5{margin-left: 5px;}
+.ml10{margin-left: 10px;}
+.ml15{margin-left: 15px;}
+.ml20{margin-left: 20px;}
+.ml50{margin-left: 50px;}
+.mr3{margin-right: 3px;}
+.mr5{margin-right: 5px;}
+.mr10{margin-right: 10px;}
+.mr15{margin-right: 15px;}
+.mr20{margin-right: 20px;}
+.mr25{margin-right: 25px;}
+.mr50{margin-right: 50px;}
+.mt3{margin-top: 3px;}
+.mt5{margin-top: 5px;}
+.mt10 { margin-top:10px; }
+.mt15 { margin-top:15px; }
+.mt20 { margin-top:20px; }
+.mt50 { margin-top:50px; }
+.mb3{margin-bottom: 3px;}
+.mb5{margin-bottom: 5px;}
+.mb10 { margin-bottom:10px; }
+.mb15 { margin-bottom:15px; }
+.mb20 { margin-bottom:20px; }
+.mb50 { margin-bottom:50px; }
+/*padding*/
+.pt5{padding-top: 5px;}
+.pt10 { padding-top:10px; }
+.pt15 { padding-top:15px; }
+.pt20 { padding-top:20px; }
+.pt30 { padding-top:30px; }
+.pt50 { padding-top:50px; }
+.pb5{padding-bottom: 5px;}
+.pb10 { padding-bottom:10px; }
+.pb15 { padding-bottom:15px; }
+.pb20 { padding-bottom:20px; }
+.pb50 { padding-bottom:50px; }
+/*btn*/
+.btn { border:0; cursor:pointer; text-align:center; padding:5px 15px; border-radius:3px; }
+.btn:hover { text-decoration:none; }
+.btn-main { display:inline-block; padding:6px 12px; background-color:#f60!important; color:#fff; }
+.btn-main:hover { color:#fff; background-color:#f40!important; filter:alpha(opacity=90); }
+.btn-sub { display:inline-block; padding:6px 12px; background-color:#37B5F9!important; color:#fff; }
+.btn-sub:hover { color:#fff; opacity: .9; filter:alpha(opacity=90); }
+.btn-green { display:inline-block; padding:6px 12px; background-color:#1BBC9B!important; color:#fff; }
+.btn-green:hover { color:#fff; opacity: .9; filter:alpha(opacity=90); }
+.btn-extra { display:inline-block; padding:5px 11px; background-color:#fff!important; border:1px solid #ddd; color:#38485a; }
+.btn-extra:hover { color:#38485a; background-color:#f9f9f9!important; border: 1px solid #ddd; }
+.btn-disabled, .btn-disabled:hover { display: inline-block; padding:6px 12px; background-color:#ddd !important; color: #999; cursor:not-allowed;}
+.btn-spare {display:inline-block; border:1px solid #36B5F8; color: #36B5F8; }
+.btn-spare:hover {color:#fff; background: #36B5F8;}
+/*display*/
+.hidden, .hide, .dn { display:none; }
+.di { display: inline; }
+.db { display: block; }
+.dib { display: inline-block; }
+/*other*/
+.box-shadow:hover { box-shadow:0 0px 5px rgba(0, 0, 0, .1); }
+.loading{ background:url(http://qhyxpic.image.kujiale.com/static/images/common/loading16.gif) no-repeat center center;}
+.loading32{ background:url(http://qhyxpic.image.kujiale.com/static/images/common/loading32.gif) no-repeat center center;}
+.trans {-webkit-transition: all 0.3s; transition: all 0.3s;}/*css3过渡动画效果*/
+.dib-vm { display: inline-block; width: 0; height: 100%; vertical-align: middle; }/*大小不定元素垂直居中*/
+/* cursor */
+.large-cursor {cursor:url(http://qhyxpic.image.kujiale.com/static/zoom_up.cur), pointer;}
+.small-cursor {cursor:url(http://qhyxpic.image.kujiale.com/static/small.cur), pointer;}
+.left-cursor {cursor:url(http://qhyxpic.image.kujiale.com/static/pic_prev.cur), pointer;}
+.right-cursor {cursor:url(http://qhyxpic.image.kujiale.com/static/pic_next.cur), pointer;}
+/*grid*/
+.grid-s240m .main-wrap { margin:0 0 0 260px; }
+.grid-s240m .col-sub { width:240px; margin-left:-100%; }
+.grid-s280m .main-wrap { margin:0 0 0 300px; }
+.grid-s280m .col-sub { width:280px; margin-left:-100%; }
+.grid-s300m .main-wrap { margin:0 0 0 320px; }
+.grid-s300m .col-sub { width:300px; margin-left:-100%; }
+.grid-ms240 .main-wrap { margin:0 260px 0 0; }
+.grid-ms240 .col-sub { width:240px; margin-left:-240px; }
+.grid-ms280 .main-wrap { margin:0 330px 0 0; }
+.grid-ms280 .col-sub { width:280px; margin-left:-280px; }
+.grid-ms300 .main-wrap { margin:0 320px 0 0; }
+.grid-ms300 .col-sub { width:300px; margin-left:-300px; }
+.grid-s280me280 .main-wrap { margin:0 300px; }
+.grid-s280me280 .col-sub { width:280px; margin-left:-100%; }
+.grid-s280me280 .col-extra { width:280px; margin-left:-280px; }
+
+/*header*/
+#header { position:relative; z-index:100; }
+#header .h-bg{ position:absolute; left:0; top:0; height:50px; width:100%; background:#000; opacity:.8; filter:alpha(opacity=80); z-index:100;}
+#header .h-wrap { position:relative; max-width:1180px; height:50px; margin:0 auto; z-index:101; _width:1180px;}
+#together{ display:none; float:left; position:relative; height:40px; margin:12px 15px 0;}
+#patty { display:inline-block; background:#dfdfdf; border-radius:2px; height:3px; top:20px; }
+#patty:before, #patty:after { display:block; content:""; position:relative; width:21px; height:3px; background:#dfdfdf; border-radius:2px; left:0; width:21px; }
+#patty:before { top:-7px; }
+#patty:after { bottom:-4px; }
+#logo { float:left; position:relative; width:91px; height:32px; margin:8px 20px 0 0; overflow:hidden; background:url(http://qhyxpic.image.kujiale.com/static/images/common/logo.png) no-repeat; background-image:-webkit-image-set(url(http://qhyxpic.image.kujiale.com/static/images/common/logo.png) 1x, url(http://qhyxpic.image.kujiale.com/static/images/common/logo@2x.png) 2x); }
+#logo a { display:block; position:absolute; width:100px; height:32px; z-index:2; }
+#logo span { position:absolute; top:-500px; }
+.nav-main { float:left; }
+.nav-auto{display:none;}
+.nav-main li { float:left; }
+.nav-main li a { float:left; position:relative; height:50px; line-height:50px; padding:0 12px; color:#bbb; font-size:14px; }
+.nav-main li a:hover, .nav-main li.cur a { color:#fff;}
+.nav-main .icon-new, .nav-main .icon-hot{position: absolute; top: 6px; right: 4px; width: 9px; height: 14px; overflow: hidden;}
+.nav-main .iconfont{ float:left; margin-right:5px; color:#bbb;}
+.nav-main li a:hover .iconfont, .nav-main li.cur .iconfont{ color:#fff;}
+
+/*footer*/
+#footer .about{padding:77px 0 35px; background: #282C32;}
+#footer .about .slogan{width: 306px; margin-top:65px;}
+#footer .about .col{width: 240px;}
+#footer .about h3{font-size: 14px; color: #fff}
+#footer .about .col ul{padding-left: 25px; border-left: 1px solid #3A3A38; margin-top: 36px;}
+#footer .about .col li{margin-bottom: 9px;}
+#footer .about .col li a{font-size: 14px; color: #999;}
+#footer .about .col li a:hover{color: #37b5f9;}
+#footer .about .contact{position: relative; font-size: 14px; color: #999;}
+#footer .about .contact .name{font-size: 14px; color: #fff; margin-right: 30px;}
+#footer .about .contact a{color: #999;}
+#footer .about .contact a:hover{color: #37b5f9;}
+#footer .about .contact ul{margin-top: 24px;}
+#footer .about .contact li{height: 37px; line-height: 36px; margin-bottom: 10px;}
+#footer .about .contact .ft-icon{display: inline-block; width: 37px; height: 37px; background: url(http://qhyxpic.oss.kujiale.com/2015/05/14/KVKHASQKAEBKMAFKAI888888_37x274.png) no-repeat 0 0; vertical-align: middle;}
+#footer .about .contact .ts-img{background-position: 0 -52px; margin-right: 20px;}
+#footer .about .contact .ts-img:hover{background-position: 0 -89px;}
+#footer .about .contact .wx-img{background-position: 0 -200px;}
+#footer .about .contact .wx-img:hover{background-position: 0 -237px;}
+#footer .about .contact .ft-wx-icon{display: none; position: absolute; top: 140px; left: 180px;}
+#footer .about .contact .wx-img:hover .ft-wx-icon{display: block;}
+#footer .link{color: #666; background: #25292E; padding: 10px 0; }
+#footer .link .main{position: relative; font-size: 14px; height: 24px; line-height: 24px; padding: 0 70px 0 90px; overflow: hidden;}
+#footer .unfold .main{height: auto;}
+#footer .link em{position: absolute; left: 0; top: 0;}
+#footer .link a{white-space: nowrap;}
+#footer .link a:hover{color: #666; text-decoration: underline;}
+#footer .link span{position: relative; top: -1px; margin: 0 5px 0 8px;}
+#footer .link .arrow{position:absolute; right:10px; top: 0; color: #fff; font-size: 20px; cursor: pointer; }
+#footer .unfold{height:auto;}
+#footer .unfold .icon-arrow-bottom{display: none; }
+#footer .unfold .icon-arrow-top{ display: block; }
+.copyright { height:18px; line-height:18px; margin: 0 auto; color: #666; text-align: center; background: #25292E; padding-bottom: 20px;}
+.copyright a{color: #666;}
+.copyright a:hover{color: #666; text-decoration: underline;}
+
+/*sidebar*/
+.site-sidebar{ position: fixed; right:0; bottom: 40px; z-index: 2001; }
+.site-sidebar a {position: relative; display: block; width:40px; height:40px; margin-top: 5px; border-radius:3px 0 0 3px; background:#88909A; overflow:hidden;}
+.site-sidebar a .ico {display:block; width:40px; height:40px; background: url(http://qhyxpic.oss.kujiale.com/2015/10/10/KYMN5YYKAEBKM2RDAA888888_40x160.png) no-repeat; transition:all 300ms ease-out 0s;}
+.site-sidebar a:hover .ico {margin-top:-40px;}
+.site-sidebar a .txt {display:block; width:30px; height:38px; padding-top:2px; margin:auto; color:#fff; text-align:center;}
+.site-sidebar .help .ico {background-position: 0 0;}
+.site-sidebar .qr .ico {background-position: 0 -40px;}
+.site-sidebar .feedback .ico {background-position: 0 -80px;}
+.site-sidebar .top .ico {background-position: 0 -120px;}
+.site-sidebar a .panel{ display: none; position: absolute; left: -116px; bottom: 0; width: 84px; padding: 10px; border: 1px solid #ccc; background: #fff; }
+.site-sidebar a:hover .panel{ display: block; }
+.J_feedback{position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 2000; }
+.J_feedback .mask{ width: 100%; height: 100%; background: #000; opacity: .2; filter:alpha(opacity=20);}
+.J_feedback .wrap{position: fixed; left: 50%; top: 50%; width: 840px; height: 440px; margin-left: -420px; margin-top: -220px; background: #fff; z-index: 2001; }
+.J_feedback .close{ position: absolute; right: 0; top: 0; width: 40px; height: 40px; line-height: 40px; font-family: \5b8b\4f53; font-size: 24px; text-align: center;}
+.J_feedback .close:hover{background: #eee;}
+.J_feedback .common{float: left; width: 390px; height: 420px; padding: 20px 0 0 30px; background: #eee; }
+.J_feedback .common .hd{ line-height: 35px; margin-bottom: 10px; }
+.J_feedback .common .bd li{ position: relative; line-height: 35px; border-bottom: 1px dashed #ddd; font-size: 14px; }
+.J_feedback .common .bd li a{ display: block; }
+.J_feedback .common .bd li.cur i{ position:absolute; width:0; height:0; right: 0; top: 10px; border-width:8px; font-size:0; line-height:0; border-style:dashed solid dashed dashed; border-color:transparent #fff transparent transparent; }
+.J_feedback .help{float: right; width: 360px; height: 400px; padding: 20px 30px; }
+.J_feedback .desc{ height: 190px; overflow: hidden; }
+.J_feedback textarea{ width: 342px; height: 152px; padding: 8px; margin-top: 20px; border: 1px solid #ddd; font-size: 14px; overflow: auto; }
+.J_feedback input{width: 342px; height: 32px; line-height: 32px; padding: 4px 8px; border: 1px solid #ddd; border-top: 0; font-size: 14px; }
+.J_feedback .help .service{ margin-top: 30px; padding-top: 25px; border-top: 1px solid #eee;}
+.J_feedback .help .service span{display: block; float: left; width: 140px; height: 30px; line-height: 30px; padding-left: 40px; font-size: 14px; }
+.J_feedback .help .service .qq {background-position: 8px -318px;}
+.J_feedback .help .service .phone {background-position: 8px -358px;}
+.J_feedback .help .bd-success{ height: 210px; padding-top: 190px; background: url(http://qhyxpic.oss.kujiale.com/2015/04/23/KU4FYPYKAEBKMECRAA888888_66x66.png) no-repeat 50% 100px; }
+.J_feedback .help .bd-answer{ position: relative; height: 370px; padding-top: 30px; }
+.J_feedback .help .bd-answer .action{position: absolute; left: 0; bottom: 81px; width: 100%; }
+.J_feedback .help .bd-answer .service{position: absolute; left: 0; bottom: 0;}
+/*pagination*/
+#pagination, #page-mini { height:30px; font-family:'Microsoft YaHei', 'Tahoma'; font-size:12px; padding:20px 0;}
+#page-mini{padding: 0;}
+#pagination .page-start, #pagination .page-end{color: #ddd;}
+#pagination .page-l, #page-mini .page-l { float:left; }
+#pagination .page-r, #page-mini .page-r { float:right; }
+#pagination a, #pagination span, #page-mini a, #page-mini span { float:left; position:relative; height:24px; line-height:24px; padding:0 8px; text-align:center; margin-right:10px; border:1px solid #ddd; background:#fff; color: #666;}
+#pagination .page-cur { background:#aaa; color:#fff; border:1px solid #aaa; }
+#pagination a:hover, #page-mini a:hover { background:#ccc; color:#fff; border:1px solid #ccc; }
+#pagination .page-cur { cursor:default;}
+#pagination i, #page-mini i { float:left; position:relative; width:0; height:0; left:-2px; top:7px; border-width:5px; border-color:transparent transparent transparent #666; border-style:dashed dashed dashed solid; font-size:0; line-height:0; overflow:hidden; }
+#pagination .page-end, #pagination .page-next, #page-mini .page-end, #page-mini .page-next { margin:0; }
+#pagination .page-end i, #pagination .page-next i, #page-mini .page-end i, #page-mini .page-next i { left:3px; }
+#pagination .page-prev i, #pagination .page-start i, #page-mini .page-prev i, #page-mini .page-start i { border-color:transparent #666 transparent transparent; border-style:dashed solid dashed dashed; }
+#pagination .page-start i, #page-mini .page-start i { border-color:transparent #ccc transparent transparent; }
+#pagination .page-end i, #page-mini .page-end i { border-color:transparent transparent transparent #e5e5e5; }
+#pagination .page-next:hover i, #page-mini .page-next:hover i { border-color:transparent transparent transparent #fff; }
+#pagination .page-prev:hover i, #page-mini .page-prev:hover i { border-color:transparent #fff transparent transparent; }
+#pagination .page-break { line-height:20px; border:0; background:none; box-shadow:none; }
+/*crumbs*/
+.crumbs { height:30px; padding:10px 0; line-height:30px; }
+.crumbs span { margin:0 7px 0 5px; font-family:\5b8b\4f53; color:#9b9b9b; }
+#cnzz_stat_icon_1000449964{display: none;}
